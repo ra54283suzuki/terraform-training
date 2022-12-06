@@ -48,3 +48,11 @@ module "nginx_sg" {
   port = 80
   cidr_blocks = [aws_vpc.example.cidr_block]
 }
+
+#### ECSタスク実行IAMロールの定義
+module "ecs_task_execution_role" {
+  source = "./iam_role"
+  name = "ecs-task-execution"
+  identifier = "ecs-tasks.amazonaws.com"
+  policy = data.aws_iam_policy_document.ecs_task_execution.json
+}
