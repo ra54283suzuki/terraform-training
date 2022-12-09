@@ -22,3 +22,8 @@ data "aws_iam_policy_document" "ecs_task_execution" {
 data "aws_iam_policy" "ecs_task_execution_role_policy" {
   arn = "arn:aws:iam::aws:policy/service-role/AmazonECSTaskExecutionRolePolicy"
 }
+
+#### AmazonEC2ContainerServiceEventsRoleの参照
+data "aws_iam_policy" "ecs_events_role_policy" {
+  arn = "arn:aws:iam::aws:policy/service-role/AmazonEC2ContainerServiceEventsRole"
+}
